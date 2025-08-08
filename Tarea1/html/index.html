@@ -53,7 +53,7 @@
             window.document.getElementById('vidasj2').innerHTML = jugador2.vida
 
             if (jugador2.vida == 0){
-                alert(`${jugador2.nombre} ha perdido`)
+                alert(`${jugador1.nombre} ha ganado`)
                 location.reload()
             }
         }
@@ -66,7 +66,7 @@
             window.document.getElementById('vidasj1').innerHTML = jugador1.vida
 
             if (jugador1.vida <= 0){
-                alert(`${jugador1.nombre} ha perdido`)
+                alert(`${jugador2.nombre} ha ganado`)
                 location.reload()
             }
         }
