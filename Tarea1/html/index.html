@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Batalla WAR</title>
+    <link rel='stylesheet' href='../css/style.css'>
+</head>
+<body>
+    <header>
+        <h1>BATALLA WAR</h1>
+    </header>
+
+    <main>
+        <div class="jugadores">
+            <div class="vida" id="vidasj1">100</div>
+            <img src="../imagenes/jugador1.png" class="jugador">
+            <button onclick="dispararj1()">DISPARAR</button>
+            <div class="disparo" id="cdisparoj1"></div>
+        </div>
+
+        <div class="jugadores">
+            <div class="vida" id="vidasj2">100</div>
+            <img src="../imagenes/jugador2.png" class="jugador">
+            <button onclick="dispararj2()">DISPARAR</button>
+            <div class="disparo" id="cdisparoj2"></div>
+        </div>
+    </main>
+
+    <footer>
+        <h2>Que la suerte gane...</h2>
+    </footer>
+
+    <script>
+        let jugador1 = {
+            nombre:'',
+            vida: 100
+        }
+        
+        let jugador2 = {
+            nombre:'',
+            vida: 100
+        }
+        
+        jugador1.nombre = prompt('Ingrese el nombre del jugador 1')
+
+        jugador2.nombre = prompt('Ingrese el nombre del jugador 2')
+
+        function dispararj1(){            
+            disparoj1 = Math.floor(Math.random() * 10)
+            window.document.getElementById('cdisparoj1').innerHTML = disparoj1
+            jugador2.vida = jugador2.vida - disparoj1
+            if (jugador2.vida < 0) jugador2.vida = 0
+            window.document.getElementById('vidasj2').innerHTML = jugador2.vida
+
+            if (jugador2.vida == 0){
+                alert(`${jugador2.nombre} ha perdido`)
+                location.reload()
+            }
+        }
+
+        function dispararj2(){
+            disparoj2 = Math.floor(Math.random() * 10)
+            window.document.getElementById('cdisparoj2').innerHTML = disparoj2
+            jugador1.vida = jugador1.vida - disparoj2
+            if (jugador1.vida < 0) jugador1.vida = 0
+            window.document.getElementById('vidasj1').innerHTML = jugador1.vida
+
+            if (jugador1.vida <= 0){
+                alert(`${jugador1.nombre} ha perdido`)
+                location.reload()
+            }
+        }
+    </script>
+</body>
+</html>
