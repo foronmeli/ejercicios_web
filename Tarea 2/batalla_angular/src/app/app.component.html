@@ -1,0 +1,23 @@
+<header>
+    <h1>BATALLA WAR</h1>
+</header>
+
+<main>
+    <div class="jugadores">
+        <div class="vida">{{ jugador1.vida }}</div>
+        <img src="/imagenes/jugador1.png" class="jugador">
+        <button (click)="dispararj1()">DISPARAR</button>
+        <div class="disparo">{{ disparoj1 }}</div>
+    </div>
+
+    <div class="jugadores">
+        <div class="vida">{{ jugador2.vida }}</div>
+        <img src="/imagenes/jugador2.png" class="jugador">
+        <button (click)="dispararj2()">DISPARAR</button>
+        <div class="disparo">{{ disparoj2 }}</div>
+    </div>
+</main>
+
+<footer>
+    <h2>Que la suerte gane...</h2>
+</footer>

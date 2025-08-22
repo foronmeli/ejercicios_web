@@ -1,0 +1,80 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #b4cac7;
+    font-family: Arial;
+}
+
+header {
+    padding: 20px 0;
+    text-align: center;
+    background-color: #7fa7a3;
+    color: white;
+}
+
+header h1 {
+    font-family: Georgia;
+    font-size: 36px;
+    letter-spacing: 2px;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    margin: 28px 200px;
+    max-width: 1000px;
+}
+
+.jugadores {
+    text-align: center;
+    background-color: #d8e5e3;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.vida {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.jugador {
+    width: 150px;
+}
+
+.disparo {
+    font-size: 18px;
+    margin-top: 10px;
+    height: 40px;
+    background: white;
+    width: 80px;
+    margin: 15px auto;
+    border-radius: 8px;
+    border: 2px solid #7fa7a3;
+    font-weight: bold;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #4b7f7a;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3a6662;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #7fa7a3;
+    color: white;
+    font-size: 18px;
+}
