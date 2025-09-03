@@ -2,3 +2,4 @@
 ### Ramas com diferentes ejercicios aplicados a páginas web
 - Juego de batalla con JavaScript
 - Juego de batalla con Angular
+- Home del Insta-pic
