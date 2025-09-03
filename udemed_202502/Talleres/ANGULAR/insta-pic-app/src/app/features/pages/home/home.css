@@ -1,0 +1,59 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.perfil {
+  width: 120px;
+  height: 120px;
+  margin-left: 20px;
+}
+.perfil p {
+  text-align: center;
+  font-family: 'Courier New';
+  font-size: 18px;
+  margin-left: 0;
+}
+main h2 {
+  text-align: center;
+  font-family: 'Courier New';
+  color: rgb(23, 52, 54);
+}
+.perfilbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 800px;
+  border: solid;
+  border-radius: 10px;
+  padding: 20px;
+}
+.statics {
+  text-align: center;
+  padding: 20px;
+  font-family: 'Courier New';
+  font-size: 18px;
+}
+.statics p {
+  font-size: 26px;
+  font-weight: bold;
+}
+.publicaciones {
+  width: 100%;
+  padding: 40px 0;
+}
+.imagenes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 600px;
+  margin: 0 auto;
+}
+.imagenes img {
+  width: 100%;
+  max-width: 280px;
+  height: 200px;
+  border-radius: 8px;
+  object-fit: cover;
+}
