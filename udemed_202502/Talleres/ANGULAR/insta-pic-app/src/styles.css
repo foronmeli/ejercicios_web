@@ -79,15 +79,3 @@ a.secondary {
 a.secondary:hover {
   background-color: #d00000;
 }
-
-/* Footer */
-footer {
-    background-color: #023047;
-    color: #FFF;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    color: white;
-    font-size: 35px;
-}

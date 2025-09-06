@@ -1,6 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { Auth } from '../../../shared/services/auth';
+import { User } from '../../../shared/interfaces/user';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -12,29 +15,42 @@ export class Login {
 
   fb = inject(FormBuilder);
 
-  LoginForm = this.fb.group({
-    username: ['', [Validators.required]],
-    password: ['', [Validators.required]],
+  router = inject(Router);
+
+  authService = inject(Auth);
+
+  ruta = '';
+
+  title = 'Registro de usuario';
+
+  validators = [Validators.required, Validators.minLength(4)];
+
+  loginForm = this.fb.group({
+    username:['', [Validators.required]],
+    password:['', this.validators]
   })
 
-  onLogin() {
-    if (!this.LoginForm.valid) {
-      alert('Faltan campos por diligenciar');
+
+  onLogin(){
+    if(!this.loginForm.valid){
+      Swal.fire('Faltan campos por diligenciar');
       return;
     }
-    let user = this.LoginForm.value;
-    console.log(user);
-    let userStr = localStorage.getItem(user.username!)
 
-    if (userStr) {
-      let userRegistered = JSON.parse(userStr)
-      if (userRegistered.password === user.password) {
-        alert('Usuario loggeado exitosamnete');
-        window.location.assign('/home');
-        return;
-      }
+  
+    let user = this.loginForm.value as User;
+    let loginResponse = this.authService.login(user);
+     if(!!loginResponse.success){
+      Swal.fire('Ingreso exitoso');
+      this.router.navigate([loginResponse.redirectTo]);
+      return;
     }
-    alert('Usuario o contraseña incorectos');
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Ingreso fallido!"
+    });
+
   }
 
 }
