@@ -4,3 +4,4 @@
 - Juego de batalla con Angular
 - Home del Insta-pic
 - Alerts Insta-pic
+- Ciclo de vida de componente
