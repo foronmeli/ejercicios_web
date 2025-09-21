@@ -1,0 +1,20 @@
+<div>
+  <h2>{{mensaje}}</h2>
+
+  <h2>OnInit</h2>
+  <div *ngFor="let item of datos">
+    {{item.name}}
+  </div>
+
+  <h2>DoCheck</h2>
+  <div #layout [style.width.px]="ancho" style="border: 1px solid black;">
+    {{cambio}}
+    </div>
+    <button (click)="cambiarAncho()">Cambiar ancho</button>
+
+  <h2>Content</h2>
+  <div #content>Este es un contenido proyectado</div>
+
+  <h2>View</h2>
+  <canvas #canvas width="200" height="100" style="border:1px solid red;"></canvas>
+</div>
